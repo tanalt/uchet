@@ -1,0 +1,17 @@
+<% provide(:title, "Реєстрація") %>
+   <h1> Реєстрація </h1>
+<%= form_for (@user) do |f| %>
+    <%= render 'shared/error_messages' %>
+
+    <%= f.label :"Ім'я" %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label :Пароль%><br>
+    <%= f.password_field :password %><br>
+    <%= f.label :Підтвердження %><br>
+    <%= f.password_field :password_confirmation %><br><br>
+    <%= f.submit "Створити користувача", class: "btn btn-large btn-primary" %>
+<%end%>
+
+
+
+

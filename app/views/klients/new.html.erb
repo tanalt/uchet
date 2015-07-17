@@ -1,0 +1,6 @@
+<h1>Новий клієнт</h1>
+<%= form_for (@klient) do |f| %>
+    ПІБ: <%=f.text_field :name %>
+    № телефона: <%=f.number_field :tel%>
+    Ідентифікаційний код: <%=f.number_field :ikod%>
+<%end%>

@@ -1,0 +1,77 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <nav>
+        <ul class="nav pull-right">
+
+          <% if signed_in? %>
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Продажі <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <% if user_privilege?%>
+                      <li><%= link_to "Дозволи", "#" %></li>
+                  <%end%>
+                </ul>
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Переустановки <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <% if user_privilege?%>
+                      <li><%= link_to "Дозволи", "#" %></li>
+                  <%end%>
+                </ul>
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Картриджі <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <% if user_privilege?%>
+                      <li><%= link_to "Дозволи", "#" %></li>
+                  <%end%>
+                </ul>
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Переустановки <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <% if user_privilege?%>
+                      <li><%= link_to "Дозволи", "#" %></li>
+                  <%end%>
+                </ul>
+
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Клієнти <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <% if user_privilege?%>
+                      <li><%= link_to "Новий клієнт", klients_new_path %></li>
+                  <%end%>
+                </ul>
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  Аккаунт <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Профіль", current_user %></li>
+                  <% if user_privilege?%>
+                      <li><%= link_to "Дозволи", users_privilege_path %></li>
+                  <%end%>
+                  <li><%= link_to "Властивості", '#' %></li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to "Вийти", signout_path, method: "delete" %>
+                  </li>
+                </ul>
+              </li>
+          <% else %>
+              <li><%= link_to "Ввійти", signin_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
