@@ -1,6 +1,19 @@
 <h1>Новий клієнт</h1>
-<%= form_for (@klient) do |f| %>
-    ПІБ: <%=f.text_field :name %>
-    № телефона: <%=f.number_field :tel%>
-    Ідентифікаційний код: <%=f.number_field :ikod%>
-<%end%>
+<div class="row">
+  <div class="col-sm-4">.col-sm-4</div>
+  <div class="col-sm-4">.col-sm-4</div>
+  <div class="col-sm-4">.col-sm-4</div>
+</div>
+    <%= form_for (@klient) do |f| %>
+        <%= render 'shared/error_messages_klients' %>
+      <div class="row">
+        <div class="col-sm-4">ПІБ
+        <%=f.text_field :fio %></div>
+        <div class="col-sm-4">№ телефона:
+        <%=f.telephone_field :tel%></div>
+        <div class="col-sm-4">Ідентифікаційний код:
+        <%=f.number_field :ikod, in: 1000000000..9999999999%></div>
+      </div>
+        <%= f.submit "Підтвердити", class: "btn btn-large btn-primary" %>
+    <%end%>
+

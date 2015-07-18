@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150717122924) do
+ActiveRecord::Schema.define(version: 20150718120226) do
 
   create_table "klients", force: :cascade do |t|
     t.string   "fio"
-    t.integer  "tel"
-    t.integer  "ikod"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "tel"
+    t.integer  "ikod",       limit: 10
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "users", force: :cascade do |t|

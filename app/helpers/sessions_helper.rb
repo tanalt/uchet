@@ -6,7 +6,7 @@ module SessionsHelper
     self.current_user = user
   end
   def user_privilege?
-    @current_user.privilege
+      @current_user.privilege
   end
   def current_user=(user)
     @current_user = user

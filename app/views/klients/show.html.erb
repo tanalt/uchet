@@ -1,0 +1,7 @@
+<% @klient.each do |kl|%>
+    <%= form_for (kl) do |f|%>
+        <%=f.label :ПІБ%>
+        <%=f.text_field :fio, :value => kl.fio%><br>
+        <%= f.submit "Змінити", class: "btn btn-small btn-primary" %>
+    <%end%>
+<%end%>

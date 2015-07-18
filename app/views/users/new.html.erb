@@ -3,12 +3,12 @@
 <%= form_for (@user) do |f| %>
     <%= render 'shared/error_messages' %>
 
-    <%= f.label :"Ім'я" %><br>
-    <%= f.text_field :name %><br>
-    <%= f.label :Пароль%><br>
-    <%= f.password_field :password %><br>
-    <%= f.label :Підтвердження %><br>
-    <%= f.password_field :password_confirmation %><br><br>
+    <%= f.label :"Ім'я" %>
+    <%= f.text_field :name %>
+    <%= f.label :Пароль%>
+    <%= f.password_field :password %>
+    <%= f.label :Підтвердження %>
+    <%= f.password_field :password_confirmation %><br>
     <%= f.submit "Створити користувача", class: "btn btn-large btn-primary" %>
 <%end%>
 

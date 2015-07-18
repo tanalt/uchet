@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'klients/new'
   get 'uchet/main'
   get "users/privilege"
-
+  resources :klients
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   get 'users/new'
