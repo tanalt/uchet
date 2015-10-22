@@ -11,7 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150718120226) do
+ActiveRecord::Schema.define(version: 20151022101217) do
+
+  create_table "acsesories", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "typ"
+    t.integer  "cart"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cartriges", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "firms", force: :cascade do |t|
+    t.string   "ikod"
+    t.string   "name"
+    t.string   "n_tel"
+    t.integer  "rahunok"
+    t.integer  "mfo"
+    t.string   "name_bank"
+    t.string   "director"
+    t.string   "string"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string   "name"
+    t.float    "price"
+    t.integer  "acses"
+    t.string   "od_vim"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "klients", force: :cascade do |t|
     t.string   "fio"
@@ -21,6 +57,27 @@ ActiveRecord::Schema.define(version: 20150718120226) do
     t.datetime "updated_at",            null: false
   end
 
+  create_table "priems", force: :cascade do |t|
+    t.integer  "klient"
+    t.integer  "cartrige"
+    t.boolean  "zrobl"
+    t.datetime "d_zrobl"
+    t.boolean  "vidano"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tovars", force: :cascade do |t|
+    t.integer  "tovar"
+    t.float    "price"
+    t.datetime "prihod"
+    t.datetime "rashod"
+    t.boolean  "spisano"
+    t.string   "ser_nom"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "password_digest"
@@ -28,6 +85,8 @@ ActiveRecord::Schema.define(version: 20150718120226) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "remember_token"
+    t.string   "pib"
+    t.string   "n_tel"
   end
 
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
